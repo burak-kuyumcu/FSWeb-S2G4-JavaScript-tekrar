@@ -92,6 +92,7 @@ console.log(CemberinAlani(15));
 */
 
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
+console.log("Sayılar dizisinde " + sayilar.length + " adet sayı var.");
 
 let ucetambolunenler,
   enkucuk,
@@ -104,26 +105,69 @@ let ucetambolunenler,
 // 3a çözümü
 
 /* kodlar buraya */
+enbuyuk = sayilar[0];
+enkucuk = sayilar[0];
+
+for(let i = 0; i < sayilar.length; i++){
+
+  if(sayilar[i] < enkucuk){
+    enkucuk = sayilar[i];
+  }
+
+  if(sayilar[i] > enbuyuk){
+    enbuyuk = sayilar[i];
+  }
+}
 
 // 3b çözümü:
 
 /* kodlar buraya */
+ucetambolunenler = [];
+
+sayilar.forEach(sayi => {
+
+  if(sayi % 3 == 0){
+    ucetambolunenler.push(sayi);
+  }
+});
 
 // 3c çözümü:
 
 /* kodlar buraya */
+ucebolunenlerintoplami = ucetambolunenler.reduce((top, sayi) => top + sayi, 0);
 
 // 3d çözümü
 
 /* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter(sayi => sayi < 500);
 
 // 3e çözümü
 
 /* kodlar buraya */
+siralisayilar = besyuzdenkucuksayilar.sort((a,b) => a - b);
 
 // 3f çözümü
 
 /* kodlar buraya */
+tekraredensayilar = [];
+const repeat = {};
+
+for(let i = 0; i< sayilar.length; i++){
+  const sayi = sayilar[i];
+
+  if(repeat[sayi]){
+    repeat[sayi]++;
+  }
+  else{
+    repeat[sayi] = 1;
+  }
+}
+
+for(let sayi in repeat){
+  if(repeat[sayi] > 1){
+    tekraredensayilar.push(`${sayi} sayısı ${repeat[sayi]} tekrar edilmiştir`);
+  }
+}
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
